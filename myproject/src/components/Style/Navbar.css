@@ -1,0 +1,45 @@
+#nav-div{
+    border: 2px solid black;
+    display: flex;
+    height: 40px;
+    background-color: chocolate;
+    justify-content: space-around;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#nav-div>div{
+    width: 40%;
+}
+#nav-div>div:nth-child(1){
+    width: 5%;
+    cursor: pointer;
+   
+}
+#nav-div>div:nth-child(2){
+    cursor: pointer;
+    width: 50%;
+}
+#nav-div>div:nth-child(3){
+    cursor: pointer;
+    width: 20%;
+    
+  
+    
+}
+
+.section{
+    display: flex;
+    justify-content:space-around;    
+}
+
+.profile{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.c-p{
+    display: flex;
+}
+
