@@ -1,6 +1,7 @@
 import { useContext, useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mycontext } from "../Context/Authcontext";
+import './Style/login.css'
 
 function Login(){
     const { state, Login } = useContext(Mycontext);
@@ -48,15 +49,17 @@ function Login(){
         }
     }, [state])
     return(
-        <div>
-           <h1>Register</h1>
-           <form onSubmit={handleSubmit}>
+        <div className="baground">
+        <div className="jc-c">
+           <div >LOGIN</div>
+           <form className="borderforlogin" onSubmit={handleSubmit}>
            <label>Email</label><br />
             <input type="email" required onChange={handleChange} name="email" value={userdata.email}/><br/>
             <label>Password</label><br/>
             <input type="password"  required onChange={handleChange} name="password"value={userdata.password}/><br/>
-            <input type="submit" value="Register"/>
+            <input type="submit" value="Login"/>
            </form>
+        </div>
         </div>
     )
 }
