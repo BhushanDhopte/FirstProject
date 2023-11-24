@@ -22,7 +22,7 @@ function Navbar(){
                 <div className='profile'> 
                     <div className='c-p'>Profile </div>
                     <div className='c-p'>Cart</div>
-                    <div className='c-p'>Logout</div>
+                    <div className='c-p' onClick={Logout}>Logout</div>
                 </div>
             :   <div className='profile'>
                 <div className='c-p' onClick={()=>router('/login')}>Login</div>

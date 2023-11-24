@@ -2,6 +2,7 @@ import { useContext, useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mycontext } from "../Context/Authcontext";
 import './Style/login.css'
+import toast from "react-hot-toast";
 
 function Login(){
     const { state, Login } = useContext(Mycontext);
@@ -34,13 +35,13 @@ function Login(){
                     Login({name:LS[i].name,email: LS[i].email});
                     setuserdata({ email: "", password: "" })
                     router("/")
-                    return alert("Login Successfull.")
+                    return toast.success("Login Successfull.")
 
                 }
             }
-            return alert("Please check you creds.")
+            return toast.error("Please check you creds.")
     }else {
-        alert("Please fill the all values.")
+        toast.error("Please fill the all values.")
     }
     }
     useEffect(() => {
@@ -51,13 +52,13 @@ function Login(){
     return(
         <div className="baground">
         <div className="jc-c">
-           <div >LOGIN</div>
+           <div className="login">LOGIN</div>
            <form className="borderforlogin" onSubmit={handleSubmit}>
-           <label>Email</label><br />
+           <label className="font">Email</label><br />
             <input type="email" required onChange={handleChange} name="email" value={userdata.email}/><br/>
-            <label>Password</label><br/>
+            <label  className="font">Password</label><br/>
             <input type="password"  required onChange={handleChange} name="password"value={userdata.password}/><br/>
-            <input type="submit" value="Login"/>
+            <input  type="submit" value="Login"/>
            </form>
         </div>
         </div>

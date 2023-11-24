@@ -1,4 +1,5 @@
 import { createContext,useReducer } from "react";
+import toast from "react-hot-toast";
 
 export const Mycontext=createContext();
 
@@ -24,6 +25,7 @@ const AuthContext =({children})=>{
 
     const Logout =()=>{
         dispatch({type:"LOGOUT"})
+        toast.success("Logout succeesful")
     }
 
     return(

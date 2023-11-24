@@ -1,6 +1,7 @@
 import { useState,useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mycontext } from "../Context/Authcontext";
+import toast from "react-hot-toast";
 
 function Register(){
     const { state } = useContext(Mycontext)
@@ -32,9 +33,9 @@ function Register(){
             setuserdata({name:"",email:"",password:""})
             router("/login")
 
-            alert("Registeration Successfull.")
+            toast.succees("Registeration Successfull.")
         }else {
-            alert("Please fill the all values.")
+            toast.error("Please fill the all values.")
         }
     }
     
