@@ -7,6 +7,7 @@ import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Mens from './components/mens';
+import SingleProduct from './components/Singleproduct';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
        <Route  path='/mens' element={<Mens />}/>
+       <Route path='/single-product/:id' element={<SingleProduct />} />
       
       </Routes>
       <Footer />
