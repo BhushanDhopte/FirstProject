@@ -1,11 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import './Style/Navbar.css'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Mycontext } from '../Context/Authcontext';
 function Navbar(){
 
+    const [search, setSearch] = useState("");
+    console.log(search, "search")
+
     const {Logout,state} =useContext(Mycontext)
     const router=useNavigate();
+
+    function SearchProduct() {
+        router(`/search/${search}`)
+    }
 
 
     return(
@@ -16,6 +23,8 @@ function Navbar(){
                 <div onClick={()=>router('/mens')}>Women</div>
                 <div onClick={()=>router('/mens')} >Kids</div>
                 <div onClick={()=>router('/mens')}>Electronics</div>
+                <input type='text' onChange={(event) => setSearch(event.target.value)} />
+                <button onClick={SearchProduct}>Search</button>
             </div>
             <div className='right-section jc-sb'>
                 {state?.user?.name?
